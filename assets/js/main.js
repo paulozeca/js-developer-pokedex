@@ -7,17 +7,19 @@ let offset = 0;
 
 function convertPokemonToLi(pokemon) {
     return `
-        <li class="pokemon ${pokemon.type}">
+        <li onclick="location.href = './detail.html';" class="pokemon ${pokemon.type}">
             <span class="number">#${pokemon.number}</span>
             <span class="name">${pokemon.name}</span>
-
-            <div class="detail">
+           
+            <div class = "detail">
                 <ol class="types">
                     ${pokemon.types.map((type) => `<li class="type ${type}">${type}</li>`).join('')}
                 </ol>
-
-                <img src="${pokemon.photo}"
-                     alt="${pokemon.name}">
+                <a href="/detail.html">
+                   <img src="${pokemon.photo}"
+                     alt="${pokemon.name}"
+                </a>
+                <!--https://pokeapi.co/api/v2/pokemon?name=${pokemon.name}-->
             </div>
         </li>
     `
